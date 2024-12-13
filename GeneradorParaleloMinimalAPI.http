@@ -1,0 +1,6 @@
+@GeneradorParaleloMinimalAPI_HostAddress = http://localhost:5211
+
+GET {{GeneradorParaleloMinimalAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
