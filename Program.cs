@@ -10,7 +10,16 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+//Incluyendo CORS
+builder.Services.AddCors(p => p.AddPolicy("PoliticaCors", build =>
+{
+    build.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
+}));
+
 var app = builder.Build();
+
+//Usando CORS
+app.UseCors("PoliticaCors");
 
 //Variables
 string carpetaDestino = Path.Combine(Directory.GetCurrentDirectory(), "Archivos");
